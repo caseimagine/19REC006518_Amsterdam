@@ -13,7 +13,7 @@
 
         <h3>
             {{atribuido[0].atribuicao | translate}}
-            <div class="togglebutton" ng-if="atribuido[0].atribuicao === 'Acompanhante'">
+            <div class="togglebutton" ng-if="atribuido[0].atribuicao === 'Acompanhante' && Titular.Origem !== 'Staff'">
                 <label>
                     <span translate>Irá levar acompanhante</span>?
                     <input type="checkbox" checked="" ng-model="titular.Wave" ng-false-value="0" ng-true-value="1">

@@ -1,12 +1,12 @@
 <h2 translate="Perfil"></h2>
 
 <p>{{titular.Nome}},
-    <span translate>seja bem-vindo(a)!</span>
+    <span translate>seja bem-vindo(a)!</span><br/>
 </p>
 
-<p>O prazo limite é dia {{grupo.deadlineInscricao}}.</p>
+<p>Nossa viagem est� chegando e para organizarmos tudo da melhor forma, precisamos do preenchimento dessa ficha at� o dia {{grupo.deadlineInscricao}}, contamos com sua ajuda!.<br/></p>
 
-<p><span translate="Profile.MandatoryFields"></span></p>
+<p>Lembrando que os campos marcados com * s�o de preenchimento obrigat�rio.<br/></p>
 
 <form name="userForm" ng-submit="submitForm(userForm.$valid)">
     <fieldset ng-repeat="atribuido in formulario.lists['Campos definidos'] | groupBy:'atribuicao'" ng-disabled="disableFields()">
@@ -15,7 +15,7 @@
             {{atribuido[0].atribuicao | translate}}
             <div class="togglebutton" ng-if="atribuido[0].atribuicao === 'Acompanhante'">
                 <label>
-                    <span translate>Irá levar acompanhante</span>?
+                    <span translate>Ir� levar acompanhante</span>?
                     <input type="checkbox" checked="" ng-model="titular.Wave" ng-false-value="0" ng-true-value="1" ng-disabled="titular.Origem === 'Staff'">
                 </label>
             </div>
@@ -60,7 +60,7 @@
             <div class="radio" ng-if="(campo.type === 'boolean')">
                 <label>
                     <input type="radio" id="{{atribuido[0].atribuicao + campo.key}}" name="{{atribuido[0].atribuicao + campo.key}}"
-                        ng-model="campo.value" ng-value="false" ng-required="campo.obrigatorio"> {{'Não' | translate}}
+                        ng-model="campo.value" ng-value="false" ng-required="campo.obrigatorio"> {{'N�o' | translate}}
                 </label>
             </div>
 
